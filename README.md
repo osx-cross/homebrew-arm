@@ -21,9 +21,11 @@ Bug can be filed at https://bugs.launchpad.net/gcc-arm-embedded/+filebug. It is 
 -   `gcc 4.9.3`
 -   `binutils 2.24.0`
 
-## Installing homebrew-arm formulae
+## Installing the formulae
 
 First, just `brew tap osx-cross/arm` and then `brew install <formula>`.
+
+### Using the prebuilt binaries
 
 To install the entire ARM toolchain, do:
 
@@ -31,8 +33,12 @@ To install the entire ARM toolchain, do:
 # to tap the repository
 $ brew tap osx-cross/arm
 # to install the toolchain
-$ brew install arm-gcc
+$ brew install arm-gcc-bin
 ```
+
+### Building from source
+
+*This is not available yet, but we are working on it ;)*
 
 ## Docs
 
