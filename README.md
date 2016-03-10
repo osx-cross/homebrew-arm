@@ -10,7 +10,7 @@ As part of its ongoing commitment to maintaining and enhancing GCC compiler supp
 
 ARM employees are maintaining this project. Contributing to this project should be via GCC trunk http://gcc.gnu.org and binutils trunk http://www.gnu.org/software/binutils/. This launchpad project is for communication and downloading. No code change is done in lp project.
 
-For Ubuntu 10.04/12.04/13.04 32/64-bit user, PPA is available at https://launchpad.net/\~terry.guo/+archive/gcc-arm-embedded.
+For Ubuntu 10.04/12.04/13.04 32/64-bit user, PPA is available at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
 
 Questions should be asked at https://answers.launchpad.net/gcc-arm-embedded
 
