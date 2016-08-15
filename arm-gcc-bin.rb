@@ -3,9 +3,9 @@ require 'formula'
 class ArmGccBin < Formula
 
     homepage 'https://launchpad.net/gcc-arm-embedded'
-    url 'https://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/gcc-arm-none-eabi-5_2-2015q4-20151219-mac.tar.bz2'
-    sha256 '41056ffeba4bcb5bbea13185461a1269613ac13321fbda3e7dc59ee664ee3f06'
-    version '5-2015-q4-major'
+    url 'https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-mac.tar.bz2'
+    sha256 'e175a0eb7ee312013d9078a5031a14bf14dff82c7e697549f04b22e6084264c8'
+    version '5-2016-q2-update'
 
     def install
         bin.install Dir["bin/*"]

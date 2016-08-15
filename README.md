@@ -18,8 +18,8 @@ Bug can be filed at https://bugs.launchpad.net/gcc-arm-embedded/+filebug. It is 
 
 ## Current Versions
 
--   `gcc 5.2.1`
--   `binutils 2.25.90`
+-   `gcc 5.4.1`
+-   `binutils 2.26`
 -   `gdb 7.10.1`
 
 ## Installing the formulae
