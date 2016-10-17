@@ -3,13 +3,12 @@ require 'formula'
 class ArmGccBin < Formula
 
     homepage 'https://launchpad.net/gcc-arm-embedded'
-    url 'https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-mac.tar.bz2'
-    sha256 'e175a0eb7ee312013d9078a5031a14bf14dff82c7e697549f04b22e6084264c8'
-    version '5-2016-q2-update'
+    url 'https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-mac.tar.bz2'
+    sha256 '5656cdec40f99d5c054a85bbc694276e1c4a1488cdacbbc448bc6acd3bbe070d'
+    version '5-2016-q3-update'
 
     def install
         bin.install Dir["bin/*"]
         prefix.install Dir["arm-none-eabi", "lib", "share"]
     end
 end
-
