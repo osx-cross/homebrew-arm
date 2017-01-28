@@ -4,27 +4,22 @@ This repository contains the GNU Toolchain for ARM Embedded Processors as formul
 
 ## About
 
-Pre-built GNU toolchain from ARM Cortex-M & Cortex-R processors (Cortex-M0/M0+/M3/M4/M7, Cortex-R4/R5/R7).
+Pre-built GNU toolchain from ARM Cortex-M & Cortex-R processors (Cortex-M0/M0+/M3/M4/M7/M23/M33, Cortex-R4/R5/R7/R8).
 
-As part of its ongoing commitment to maintaining and enhancing GCC compiler support for the ARM architecture, ARM is maintaining a GNU toolchain with a GCC source branch targeted at Embedded ARM Processors, namely Cortex-R/Cortex-M processor families, covering Cortex-M0, Cortex-M3, Cortex-M4, Cortex-M0+, Cortex-M7, Cortex-R4, Cortex-R5 and Cortex-R7. As part of this, ARM will, at regular intervals, release binaries pre-built and tested from the ARM embedded branch. The improvements will be freely available for integration into 3rd party toolchains, and for direct download by end-users.
+This is a homebrew binary repository for:
 
-ARM employees are maintaining this project. Contributing to this project should be via GCC trunk http://gcc.gnu.org and binutils trunk http://www.gnu.org/software/binutils/. This launchpad project is for communication and downloading. No code change is done in lp project.
-
-For Ubuntu 10.04/12.04/13.04 32/64-bit user, PPA is available at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
-
-Questions should be asked at https://answers.launchpad.net/gcc-arm-embedded
-
-Bug can be filed at https://bugs.launchpad.net/gcc-arm-embedded/+filebug. It is highly encouraged to ask question first before filing a bug.
+-   [ARM Developer](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/)
+-   [GNU ARM Embedded Toolchain Launchpad](https://launchpad.net/gcc-arm-embedded)
 
 ## Current Versions
 
--   `gcc 5.4.1`
--   `binutils 2.26`
--   `gdb 7.10.1`
+-   `gcc 6.2.1`
+-   `binutils 2.27.51.20161204`
+-   `gdb 7.12.0.20161204-git`
 
 ## Installing the formulae
 
-First, just `brew tap osx-cross/arm` and then `brew install <formula>`.
+First `brew tap osx-cross/arm` and then `brew install <formula>`.
 
 ### Using the prebuilt binaries
 
@@ -44,5 +39,4 @@ $ brew install arm-gcc-bin
 ## Docs
 
 -   `brew help`, `man brew`, or the Homebrew [wiki](http://wiki.github.com/mxcl/homebrew).
--   [GNU Tools for ARM Embedded Processors](https://launchpad.net/gcc-arm-embedded)
-
+-   [GNU ARM Embedded Toolchain](https://launchpad.net/gcc-arm-embedded)
