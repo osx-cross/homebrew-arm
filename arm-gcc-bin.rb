@@ -3,9 +3,9 @@ require 'formula'
 class ArmGccBin < Formula
 
     homepage 'https://developer.arm.com/open-source/gnu-toolchain/gnu-rm'
-    url 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-mac.tar.bz2'
-    sha256 '89b776c7cf0591c810b5b60067e4dc113b5b71bc50084a536e71b894a97fdccb'
-    version '7-2017-q4-major'
+    url 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-mac.tar.bz2'
+    sha256 'c1c4af5226d52bd1b688cf1bd78f60eeea53b19fb337ef1df4380d752ba88759'
+    version '7-2018-q2-update'
 
     def install
         bin.install Dir["bin/*"]
