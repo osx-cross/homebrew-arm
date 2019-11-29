@@ -8,7 +8,7 @@ class ArmGccBinAT8 < Formula
     sha256 'fc235ce853bf3bceba46eff4b95764c5935ca07fc4998762ef5e5b7d05f37085'
     version '8-2019-q3-update'
 
-    keg_only "it may interfere with another version of arm-gcc-bin. This is useful if you want to have multiple versions installed on the same machine."
+    keg_only "it may interfere with another version of arm-gcc-bin. This is useful if you want to have multiple versions installed on the same machine"
 
     def install
         bin.install Dir["bin/*"]
