@@ -1,4 +1,4 @@
-class ArmGccBin < Formula
+class ArmGccBinAT102020Q4Major < Formula
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://developer.arm.com/open-source/gnu-toolchain/gnu-rm"
   url "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-mac.tar.bz2"
