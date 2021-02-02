@@ -1,9 +1,9 @@
-class ArmGccBinAT92020Q2Update < Formula
+class ArmGccBinAT8 < Formula
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://developer.arm.com/open-source/gnu-toolchain/gnu-rm"
-  url "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-mac.tar.bz2"
-  version "9-2020-q2-update"
-  sha256 "bbb9b87e442b426eca3148fa74705c66b49a63f148902a0ea46f676ec24f9ac6"
+  url "https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2019q3/RC1.1/gcc-arm-none-eabi-8-2019-q3-update-mac.tar.bz2"
+  version "8-2019-q3-update"
+  sha256 "fc235ce853bf3bceba46eff4b95764c5935ca07fc4998762ef5e5b7d05f37085"
 
   keg_only <<~EOS
     it may interfere with another version of arm-gcc-bin.
