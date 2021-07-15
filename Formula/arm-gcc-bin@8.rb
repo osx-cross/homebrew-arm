@@ -5,6 +5,8 @@ class ArmGccBinAT8 < Formula
   version "8-2019-q3-update"
   sha256 "fc235ce853bf3bceba46eff4b95764c5935ca07fc4998762ef5e5b7d05f37085"
 
+  revision 1
+
   keg_only <<~EOS
     it may interfere with another version of arm-gcc-bin.
     This is useful if you want to have multiple versions installed
