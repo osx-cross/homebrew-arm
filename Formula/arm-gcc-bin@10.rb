@@ -5,6 +5,8 @@ class ArmGccBinAT10 < Formula
   version "10-2020-q4-major"
   sha256 "bed12de3565d4eb02e7b58be945376eaca79a8ae3ebb785ec7344e7e2db0bdc0"
 
+  revision 1
+
   def install
     bin.install Dir["bin/*"]
     prefix.install Dir["arm-none-eabi", "lib", "share"]
