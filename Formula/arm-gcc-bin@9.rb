@@ -7,6 +7,12 @@ class ArmGccBinAT9 < Formula
 
   revision 1
 
+  bottle do
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@9-9-2020-q2-update_1"
+    sha256 cellar: :any_skip_relocation, big_sur:  "8d013292bfbd13c7c7b6427c3d080f63db8980f360748af3163eac1e452dd8bd"
+    sha256 cellar: :any_skip_relocation, catalina: "1911e7454e7de3dd380b69db5efd01bead63736da1807a0b3045c64a3b932b5a"
+  end
+
   keg_only <<~EOS
     it may interfere with another version of arm-gcc-bin.
     This is useful if you want to have multiple versions installed
