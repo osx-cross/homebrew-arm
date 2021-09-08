@@ -4,6 +4,7 @@ class ArmGccBinAT10 < Formula
   url "https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.07/gcc-arm-none-eabi-10.3-2021.07-mac-10.14.6.tar.bz2"
   version "10.3-2021.07"
   sha256 "0a4554b248a1626496eeba56ad59d2bba4279cb485099f820bb887fe6a8b7ee4"
+  revision 1
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@10-10-2020-q4-major_1"
