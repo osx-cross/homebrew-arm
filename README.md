@@ -31,4 +31,4 @@ $ brew install arm-gcc-bin
 ## Docs
 
 - `brew help`, `man brew`, or check [Homebrew's documentation](https://docs.brew.sh).
-- [GNU ARM Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/)
+- [GNU ARM Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)
