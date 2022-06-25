@@ -5,7 +5,7 @@ class ArmGccBinAT9 < Formula
   version "9-2020-q2-update"
   sha256 "bbb9b87e442b426eca3148fa74705c66b49a63f148902a0ea46f676ec24f9ac6"
 
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@9-9-2020-q2-update_1"
