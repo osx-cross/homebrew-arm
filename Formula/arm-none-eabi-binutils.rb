@@ -6,6 +6,12 @@ class ArmNoneEabiBinutils < Formula
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
   sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
 
+  bottle do
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.38"
+    sha256 big_sur:  "44bd105d26aeb062ba2f6d9a03c0a696a4b54ae58ec18488473588dbb3ea6728"
+    sha256 catalina: "ae7388aee70e4103001459101dbdc2e35e409d23709d999ec5b3fd2bb42905b1"
+  end
+
   uses_from_macos "zlib"
 
   def install
