@@ -8,8 +8,9 @@ class ArmGccBinAT10 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@10-10.3-2021.10"
-    sha256 cellar: :any_skip_relocation, big_sur: "bf9b941c1436e2d9ce39b8f30e55253f5d1284f5b8b1506012c3c3aa9e132d1f"
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@10-10.3-2021.10_1"
+    sha256 cellar: :any_skip_relocation, big_sur:  "3161968bd3254480a4bd7db628459556d14878f0dd2720062cc6832dc2c4c439"
+    sha256 cellar: :any_skip_relocation, catalina: "3f8e167829bd91b011a565ebb938f774d2cf4ae359e9c70bc69589f76d50deb1"
   end
 
   def install
