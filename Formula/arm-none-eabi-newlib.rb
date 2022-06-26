@@ -17,9 +17,9 @@ class ArmNoneEabiNewlib < Formula
     sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
   end
 
-  arm_prefix = prefix/"arm-none-eabi"
-
   def install
+    arm_prefix = prefix/"arm-none-eabi"
+
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
 
@@ -88,7 +88,6 @@ class ArmNoneEabiNewlib < Formula
       mkdir_p arm_prefix/"lib/thumb/#{v}/softfp"
     end
 
-
     mkdir "build-nano" do
       args = %W[
         --target=arm-none-eabi
@@ -143,6 +142,8 @@ class ArmNoneEabiNewlib < Formula
   end
 
   test do
+    arm_prefix = prefix/"arm-none-eabi"
+
     assert_predicate (arm_prefix/"lib").glob("**/lib{c,g,rdimon}.a"), :any?
     assert_predicate (arm_prefix/"lib").glob("**/lib{c,g,rdimon}_nano.a"), :any?
   end
