@@ -5,6 +5,12 @@ class ArmNoneEabiNewlib < Formula
   url "https://sourceware.org/pub/newlib/newlib-3.3.0.tar.gz"
   sha256 "58dd9e3eaedf519360d92d84205c3deef0b3fc286685d1c562e245914ef72c66"
 
+  bottle do
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-newlib-3.3.0"
+    sha256 cellar: :any_skip_relocation, big_sur:  "b9ebd96401603d3606d2f1c0e77ff56bb49f31dd33133ee1ab1f34f6fb272bc6"
+    sha256 cellar: :any_skip_relocation, catalina: "bc7ee9f1c9391688ad7df77bc1154bd8cfc8f6d3936673b99ac0eab8325255ff"
+  end
+
   depends_on "gmp" => :build
   depends_on "isl" => :build
   depends_on "libmpc" => :build
