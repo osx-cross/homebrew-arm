@@ -17,6 +17,8 @@ class ArmNoneEabiNewlib < Formula
     sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
   end
 
+  arm_prefix = prefix/"arm-none-eabi"
+
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
@@ -75,18 +77,17 @@ class ArmNoneEabiNewlib < Formula
     ENV["PATH"] = "#{buildpath.parent/"gcc-install/bin"}:#{ENV["PATH"]}"
 
     # `make install` complains if these dirs do not already exist, for some reason
-    mkdir_p "#{prefix}/arm-none-eabi/lib/arm/v5te/hard"
-    mkdir_p "#{prefix}/arm-none-eabi/lib/arm/v5te/softfp"
-    mkdir_p "#{prefix}/arm-none-eabi/lib/thumb/nofp"
+    mkdir_p arm_prefix/"lib/arm/v5te/hard"
+    mkdir_p arm_prefix/"lib/arm/v5te/softfp"
+    mkdir_p arm_prefix/"lib/thumb/nofp"
     ["v6-m", "v7", "v7-m", "v7e-m", "v8-m.base", "v8-m.main"].each do |v|
-      mkdir_p "#{prefix}/arm-none-eabi/lib/thumb/#{v}/nofp"
+      mkdir_p arm_prefix/"lib/thumb/#{v}/nofp"
     end
     ["v7+fp", "v7e-m+fp", "v7e-m+dp", "v8-m.main+fp", "v8-m.main+dp"].each do |v|
-      mkdir_p "#{prefix}/arm-none-eabi/lib/thumb/#{v}/hard"
-      mkdir_p "#{prefix}/arm-none-eabi/lib/thumb/#{v}/softfp"
+      mkdir_p arm_prefix/"lib/thumb/#{v}/hard"
+      mkdir_p arm_prefix/"lib/thumb/#{v}/softfp"
     end
 
-    arm_prefix = prefix/"arm-none-eabi"
 
     mkdir "build-nano" do
       args = %W[
@@ -113,8 +114,8 @@ class ArmNoneEabiNewlib < Formula
       (arm_prefix/"lib").glob("**/lib{c,g,rdimon}.a").each do |f|
         mv f, f.sub(".a", "_nano.a")
       end
-      mkdir_p "#{arm_prefix}/include/newlib-nano"
-      mv "#{arm_prefix}/include/newlib.h", "#{arm_prefix}/include/newlib-nano/newlib.h"
+      mkdir_p arm_prefix/"include/newlib-nano"
+      mv arm_prefix/"include/newlib.h", arm_prefix/"include/newlib-nano/newlib.h"
     end
 
     mkdir "build" do
