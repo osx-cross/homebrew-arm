@@ -6,8 +6,6 @@ class ArmNoneEabiGccAT8 < Formula
   mirror "https://ftpmirror.gnu.org/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
   sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
 
-  head "https://github.com/gcc-mirror/gcc.git", branch: "releases/gcc-8"
-
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? do
