@@ -167,6 +167,7 @@ class ArmNoneEabiGccAT8 < Formula
       --target=arm-none-eabi
       --prefix=#{prefix}
       --libdir=#{lib}/arm-none-eabi-gcc/#{version.major}
+      --with-python-dir=share/gcc-arm-none-eabi
 
       --enable-languages=#{languages.join(",")}
 
