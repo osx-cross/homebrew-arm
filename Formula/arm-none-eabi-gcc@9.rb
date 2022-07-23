@@ -6,6 +6,12 @@ class ArmNoneEabiGccAT9 < Formula
   mirror "https://ftpmirror.gnu.org/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
   sha256 "27769f64ef1d4cd5e2be8682c0c93f9887983e6cfd1a927ce5a0a2915a95cf8f"
 
+  bottle do
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-gcc@9-9.5.0"
+    sha256 big_sur:  "95cb6540de5fdb9d3664715c2c0767b8dba4648111b7664859c3b0078b0153f0"
+    sha256 catalina: "5affec85fa5189986797a5eebe1599940c71c90d50f207f8496a0c2008bbceee"
+  end
+
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? do
