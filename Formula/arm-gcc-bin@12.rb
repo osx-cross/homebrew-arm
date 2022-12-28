@@ -21,8 +21,9 @@ class ArmGccBinAT12 < Formula
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@12-12.2.Rel1"
-    sha256 cellar: :any_skip_relocation, big_sur:  "7163811bf21aa6a06f4f57aeac31c07a2c604c85ba20d962086b85c42ae9502d"
-    sha256 cellar: :any_skip_relocation, catalina: "bc98e405bd431134f8becab57cedc80792650f4e0462cacff4e06fa612b2bd03"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, big_sur:  "dbdef49e81a11359cda8110f4a8d992fb2e2383c694c237d3df637be1b298a48"
+    sha256 cellar: :any_skip_relocation, catalina: "f2f063698c279a5dd8f40ad0f687de6d5f8984c1e47197572e4cde6568a8422c"
   end
 
   def install
