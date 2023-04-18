@@ -13,8 +13,17 @@ class ArmGccBinAT10 < Formula
     sha256 cellar: :any_skip_relocation, catalina: "3f8e167829bd91b011a565ebb938f774d2cf4ae359e9c70bc69589f76d50deb1"
   end
 
+  keg_only <<~EOS
+    it may interfere with another version of arm-gcc-bin.
+    This is useful if you want to have multiple versions installed
+  EOS
+
   def install
     bin.install Dir["bin/*"]
     prefix.install Dir["arm-none-eabi", "lib", "share"]
+  end
+
+  test do
+    assert_match "GNU Tools for Arm Embedded Processors #{version}", `#{opt_prefix}/bin/arm-none-eabi-gcc --version`
   end
 end
