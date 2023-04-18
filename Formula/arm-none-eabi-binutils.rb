@@ -8,8 +8,9 @@ class ArmNoneEabiBinutils < Formula
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.38"
-    sha256 big_sur:  "44bd105d26aeb062ba2f6d9a03c0a696a4b54ae58ec18488473588dbb3ea6728"
-    sha256 catalina: "ae7388aee70e4103001459101dbdc2e35e409d23709d999ec5b3fd2bb42905b1"
+    rebuild 1
+    sha256 big_sur:  "cfec380e7129a7639590e3f05bd1658f0fb8f39b76c2c190ee4adf3511eaa63b"
+    sha256 catalina: "bb9958616dc751a262e512cc08cf746d9dbe951385bd24e029b4bfa959fe24e1"
   end
 
   keg_only "it might interfere with other version of arm-gcc.\n" \
