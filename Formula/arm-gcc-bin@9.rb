@@ -22,4 +22,8 @@ class ArmGccBinAT9 < Formula
     bin.install Dir["bin/*"]
     prefix.install Dir["arm-none-eabi", "lib", "share"]
   end
+
+  test do
+    assert_match "GNU Arm Embedded Toolchain #{version}", `#{opt_prefix}/bin/arm-none-eabi-gcc --version`
+  end
 end
