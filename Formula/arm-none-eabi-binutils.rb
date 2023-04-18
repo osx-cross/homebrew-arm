@@ -12,6 +12,10 @@ class ArmNoneEabiBinutils < Formula
     sha256 catalina: "ae7388aee70e4103001459101dbdc2e35e409d23709d999ec5b3fd2bb42905b1"
   end
 
+  keg_only "it might interfere with other version of arm-gcc.\n" \
+           "This is useful if you want to have multiple version of arm-none-eabi-gcc\n" \
+           "installed on the same machine"
+
   uses_from_macos "zlib"
 
   def install
@@ -49,7 +53,6 @@ class ArmNoneEabiBinutils < Formula
   end
 
   test do
-    version_output = "GNU ld (GNU Binutils) 2.38\n"
-    assert_equal `arm-none-eabi-ld -v`, version_output
+    assert_match "GNU ld (GNU Binutils) 2.38\n", `#{opt_prefix}/bin/arm-none-eabi-ld -v`
   end
 end
