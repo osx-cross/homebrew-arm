@@ -19,6 +19,10 @@ class ArmNoneEabiBinutils < Formula
 
   uses_from_macos "zlib"
 
+  on_ventura do
+    depends_on "texinfo" => :build
+  end
+
   def install
     # https://sourceware.org/bugzilla/show_bug.cgi?id=23424
     ENV["CXXFLAGS"] = "-std=c++11 -Wno-c++11-narrowing"
