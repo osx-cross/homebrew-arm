@@ -6,7 +6,6 @@ This repository contains the GNU Toolchain for ARM Embedded Processors as formul
 
 This is a Homebrew binary repository for the pre-built GNU toolchain for ARM Cortex-M and Cortex-R processors (Cortex-M0/M0+/M3/M4/M7/M23/M33, Cortex-R4/R5/R7/R8 and more).
 
-
 ## Installing the formulae
 
 First `brew tap osx-cross/arm` and then `brew install <formula>`.
@@ -26,7 +25,6 @@ $ brew install arm-gcc-bin
 ### Building from source
 
 *This is not available yet, but we are working on it ;)*
-
 
 ## Docs
 
