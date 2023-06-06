@@ -5,6 +5,10 @@ on:
     types:
       - labeled
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.OSX_CROSS_ARM_HOMEBREW_GITHUB_API_TOKEN }}
   PULL_REQUEST: ${{ github.event.pull_request.number }}
