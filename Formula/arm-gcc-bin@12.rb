@@ -15,16 +15,9 @@ class ArmGccBinAT12 < Formula
   homepage "https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads"
 
   url "https://developer.arm.com/-/media/Files/downloads/gnu/12.2.mpacbti-rel1/binrel/#{@tar_file}"
-  version "12.2.Rel1"
+  version "12.2.MPACBTI-Rel1"
 
   sha256 @tar_file_sha
-
-  bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@12-12.2.Rel1"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, big_sur:  "f6bf8cdb4b4029c11c194b43ba76493ad1593993e1fac7e1dfb1c5d2f05943b9"
-    sha256 cellar: :any_skip_relocation, catalina: "9318ba31774a22db2c8c283b91976ea40e712ef79b3d2a68abb1e80e04dfc2a1"
-  end
 
   keg_only <<~EOS
     it may interfere with another version of arm-gcc-bin.
