@@ -8,10 +8,10 @@ class ArmGccBinAT8 < Formula
   revision 3
 
   bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@8-8-2019-q3-update_2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:  "93e0d82f902bc5381dc8f60a10dba0da349f455e5ca8ba3bccabc62b3a895966"
-    sha256 cellar: :any_skip_relocation, catalina: "e07ea89789abf40562ed094ee7ee6c100bbc94d80439f051b477002b2b85b508"
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@8-8-2019-q3-update_3"
+    sha256 cellar: :any_skip_relocation, ventura:  "fabccd76e4fe436f01f42673f1a2733b38df424e1cdfd77da076d9deb171e649"
+    sha256 cellar: :any_skip_relocation, monterey: "163081c2b3f24a1447d9247549e27469989f7befac151bdd2957bafcfd2458f6"
+    sha256 cellar: :any_skip_relocation, big_sur:  "d1d10c396f5f7d324c29336ae2cd57d815b90574d7dc2560115d4b914ebcc622"
   end
 
   keg_only <<~EOS
