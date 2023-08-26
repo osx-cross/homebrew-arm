@@ -5,6 +5,7 @@ class ArmNoneEabiGccAT9 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
   sha256 "27769f64ef1d4cd5e2be8682c0c93f9887983e6cfd1a927ce5a0a2915a95cf8f"
+  revision 1
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-gcc@9-9.5.0"
@@ -23,12 +24,11 @@ class ArmNoneEabiGccAT9 < Formula
            "This is useful if you want to have multiple version of arm-none-eabi-gcc\n" \
            "installed on the same machine"
 
-  depends_on "arm-none-eabi-binutils"
-
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
   depends_on "mpfr"
+  depends_on "osx-cross/arm/arm-none-eabi-binutils"
 
   uses_from_macos "zlib"
 
