@@ -8,9 +8,10 @@ class ArmNoneEabiGccAT8 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-gcc@8-8.5.0"
-    sha256 big_sur:  "59b27ef9778ad6995660808bbf28969e6d34be3cf80ce2d03b421a30a97a5fae"
-    sha256 catalina: "2ce1bc83e82cbdc051c19f3b386a7eff6f4ca1ff360bf5c5b4e38f7fb5497b8b"
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-gcc@8-8.5.0_1"
+    sha256 ventura:  "590c63c5a67d36abfbbb729eea8a3dd2d0b85737a25784f2aa1cfb3591fdaa7b"
+    sha256 monterey: "806bde1541e4fcb03976c2537a2588c77b74311b62ef6a38b173867d915d6780"
+    sha256 big_sur:  "9343fa93379de1636be872dd1e6ef7d51aa79fc01ea51f66b53ff0aa90a9efed"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
