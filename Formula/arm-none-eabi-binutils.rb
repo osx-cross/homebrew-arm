@@ -20,7 +20,7 @@ class ArmNoneEabiBinutils < Formula
 
   uses_from_macos "zlib"
 
-  on_ventura do
+  on_ventura :or_newer do
     depends_on "texinfo" => :build
   end
 
