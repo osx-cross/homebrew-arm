@@ -18,6 +18,8 @@ class ArmNoneEabiBinutils < Formula
            "This is useful if you want to have multiple version of arm-none-eabi-gcc\n" \
            "installed on the same machine"
 
+  depends_on "pkg-config" => :build
+
   uses_from_macos "zlib"
 
   on_ventura :or_newer do
