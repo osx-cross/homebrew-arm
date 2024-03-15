@@ -2,9 +2,9 @@ class ArmNoneEabiBinutils < Formula
   desc "GNU Tools for ARM Embedded Processors - Binutils"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
 
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.38.tar.xz"
-  sha256 "e316477a914f567eccc34d5d29785b8b0f5a10208d36bbacedcc39048ecfe024"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
+  sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.38"
@@ -50,15 +50,7 @@ class ArmNoneEabiBinutils < Formula
     info.rmtree # info files conflict with native binutils
   end
 
-  def caveats
-    <<~EOS
-      For Mac computers with Apple silicon, arm-none-eabi-binutils might need Rosetta 2 to work properly.
-      You can learn more about Rosetta 2 here:
-          > https://support.apple.com/en-us/HT211861
-    EOS
-  end
-
   test do
-    assert_match "GNU ld (GNU Binutils) 2.38\n", `#{opt_prefix}/bin/arm-none-eabi-ld -v`
+    assert_match "GNU ld (GNU Binutils) 2.41\n", `#{opt_prefix}/bin/arm-none-eabi-ld -v`
   end
 end
