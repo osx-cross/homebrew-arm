@@ -19,12 +19,9 @@ class ArmNoneEabiBinutils < Formula
            "installed on the same machine"
 
   depends_on "pkg-config" => :build
+  depends_on "texinfo" => :build
 
   uses_from_macos "zlib"
-
-  on_ventura :or_newer do
-    depends_on "texinfo" => :build
-  end
 
   def install
     # https://sourceware.org/bugzilla/show_bug.cgi?id=23424
