@@ -7,11 +7,10 @@ class ArmNoneEabiBinutils < Formula
   sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
 
   bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.38"
-    rebuild 3
-    sha256 ventura:  "4e076d6c8ac889a0a22dab0a34464fc9dc4718222066352b0dda68cb7465a621"
-    sha256 monterey: "80ca3274d451abe30bf14c2fdff3b622ce8b50233f9b2d14a345c2da3fe0ceed"
-    sha256 big_sur:  "7f192d490434f1b8bf092df76055022641f3f11ebf1f9650d0726cc29f6c32d6"
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.41"
+    sha256 arm64_sonoma: "228bc6d6d41fd0f99abd9bf5918733b6ff260abaa8ae97ef4119e6a4b7222e87"
+    sha256 ventura:      "60bd5ba8a2d0e5e9d5843e89ad77debc23a9dc90c29be0b55f03bddde4b54098"
+    sha256 monterey:     "4f5ea04ee0667d648c0595a74da2f91ec2c87d2d13cc930b05f93c1ac7dce368"
   end
 
   keg_only "it might interfere with other version of arm-gcc.\n" \
