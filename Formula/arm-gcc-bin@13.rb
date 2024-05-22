@@ -15,7 +15,6 @@ class ArmGccBinAT13 < Formula
   homepage "https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads"
 
   url "https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/#{@tar_file}"
-  version "13.2.Rel1"
 
   sha256 @tar_file_sha
 
