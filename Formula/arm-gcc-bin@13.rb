@@ -8,7 +8,7 @@ class ArmGccBinAT13 < Formula
   @tar_file_sha = if Hardware::CPU.arm?
     "21a9e875250bcb0db8df4cb23dd43c94c00a1d3b98ecba9cdd6ed51586b12248"
   else
-    "00c0eeb57ae92332f216151ac66df6ba17d2d3b306dac86f4006006f437b2902"
+    "075faa4f3e8eb45e59144858202351a28706f54a6ec17eedd88c9fb9412372cc"
   end
 
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
