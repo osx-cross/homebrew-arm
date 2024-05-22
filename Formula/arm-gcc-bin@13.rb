@@ -18,6 +18,8 @@ class ArmGccBinAT13 < Formula
 
   sha256 @tar_file_sha
 
+  depends_on "xz" unless Hardware::CPU.arm?
+
   keg_only <<~KEG_ONLY_EOS
     it may interfere with another version of arm-gcc-bin.
     This is useful if you want to have multiple versions installed
