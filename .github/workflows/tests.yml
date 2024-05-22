@@ -16,6 +16,7 @@ concurrency:
 jobs:
   test-bot:
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-12, macos-13, macos-14]
     runs-on: ${{ matrix.os }}
