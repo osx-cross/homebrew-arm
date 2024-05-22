@@ -6,7 +6,7 @@ class ArmGccBinAT13 < Formula
   end
 
   @tar_file_sha = if Hardware::CPU.arm?
-    "21a9e875250bcb0db8df4cb23dd43c94c00a1d3b98ecba9cdd6ed51586b12248"
+    "39c44f8af42695b7b871df42e346c09fee670ea8dfc11f17083e296ea2b0d279"
   else
     "075faa4f3e8eb45e59144858202351a28706f54a6ec17eedd88c9fb9412372cc"
   end
