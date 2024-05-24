@@ -5,6 +5,11 @@ class ArmGccBinAT13 < Formula
     "arm-gnu-toolchain-13.2.rel1-darwin-x86_64-arm-none-eabi.tar.xz"
   end
 
+  desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
+  homepage "https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads"
+  url "https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/#{@tar_file}"
+  sha256 @tar_file_sha
+
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@13-13.2.rel1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "91ec58e4f00cf911ed4d12534591b776e9b1217ceb3b5b5f582da76646f70de7"
@@ -17,13 +22,6 @@ class ArmGccBinAT13 < Formula
   else
     "075faa4f3e8eb45e59144858202351a28706f54a6ec17eedd88c9fb9412372cc"
   end
-
-  desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
-  homepage "https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads"
-
-  url "https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/#{@tar_file}"
-
-  sha256 @tar_file_sha
 
   depends_on "xz" unless Hardware::CPU.arm?
 
