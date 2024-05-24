@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArmNoneEabiBinutils < Formula
   desc "GNU Tools for ARM Embedded Processors - Binutils"
   homepage "https://www.gnu.org/software/binutils/binutils.html"

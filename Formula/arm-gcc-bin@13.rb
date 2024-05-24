@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArmGccBinAT13 < Formula
   @tar_file = if Hardware::CPU.arm?
     "arm-gnu-toolchain-13.2.rel1-darwin-arm64-arm-none-eabi.tar.xz"
@@ -13,8 +15,8 @@ class ArmGccBinAT13 < Formula
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@13-13.2.rel1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "91ec58e4f00cf911ed4d12534591b776e9b1217ceb3b5b5f582da76646f70de7"
-    sha256 cellar: :any,                 ventura:      "6e8834c9c8bd67023b438451588ac679b2c520139ff9daec0692f184923078ec"
-    sha256 cellar: :any,                 monterey:     "b2ea7549fb70b7a69438a814c84bd9ef637b33ee93ec135842e82b787aa1db34"
+    sha256 cellar: :any_skip_relocation, ventura:      "6e8834c9c8bd67023b438451588ac679b2c520139ff9daec0692f184923078ec"
+    sha256 cellar: :any_skip_relocation, monterey:     "b2ea7549fb70b7a69438a814c84bd9ef637b33ee93ec135842e82b787aa1db34"
   end
 
   @tar_file_sha = if Hardware::CPU.arm?

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArmGccBinAT10 < Formula
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://developer.arm.com/open-source/gnu-toolchain/gnu-rm"

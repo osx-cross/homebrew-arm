@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArmGccBinAT12 < Formula
   @tar_file = if Hardware::CPU.arm?
     "arm-gnu-toolchain-12.2.rel1-darwin-arm64-arm-none-eabi.tar.xz"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArmNoneEabiGccAT9 < Formula
   desc "GNU Tools for ARM Embedded Processors - GCC"
   homepage "https://www.gnu.org/software/gcc/gcc.html"
@@ -47,7 +49,7 @@ class ArmNoneEabiGccAT9 < Formula
   end
 
   def install
-    arm_prefix = prefix/"arm-none-eabi"
+    arm_prefix = prefix / "arm-none-eabi"
 
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
@@ -63,8 +65,8 @@ class ArmNoneEabiGccAT9 < Formula
           --prefix=/
           --target=arm-none-eabi
           --enable-languages=c
-          --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin/"arm-none-eabi-ld"}
-          --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin/"arm-none-eabi-as"}
+          --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-ld"}
+          --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-as"}
           --disable-nls
           --disable-libssp
           --disable-shared
@@ -87,7 +89,7 @@ class ArmNoneEabiGccAT9 < Formula
           --with-multilib-list=rmprofile
           --with-system-zlib
           --with-sysroot=#{prefix}
-          --with-build-sysroot=#{buildpath.parent/"gcc-install"}
+          --with-build-sysroot=#{buildpath.parent / "gcc-install"}
         ]
 
         # Avoid reference to sed shim
@@ -99,21 +101,21 @@ class ArmNoneEabiGccAT9 < Formula
         # otherwise updated load commands won't fit in the Mach-O header.
         # This is needed because `gcc` avoids the superenv shim.
         system "make", "all-gcc", "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
-        system "make", "DESTDIR=#{buildpath.parent/"gcc-install"}", "install-gcc"
+        system "make", "DESTDIR=#{buildpath.parent / "gcc-install"}", "install-gcc"
       end
 
-      ENV["PATH"] = "#{buildpath.parent/"gcc-install/bin"}:#{ENV["PATH"]}"
+      ENV["PATH"] = "#{buildpath.parent / "gcc-install/bin"}:#{ENV["PATH"]}"
 
       # `make install` complains if these dirs do not already exist, for some reason
-      (arm_prefix/"lib/arm/v5te/hard").mkpath
-      (arm_prefix/"lib/arm/v5te/softfp").mkpath
-      (arm_prefix/"lib/thumb/nofp").mkpath
+      (arm_prefix / "lib/arm/v5te/hard").mkpath
+      (arm_prefix / "lib/arm/v5te/softfp").mkpath
+      (arm_prefix / "lib/thumb/nofp").mkpath
       ["v6-m", "v7", "v7-m", "v7e-m", "v8-m.base", "v8-m.main"].each do |v|
-        (arm_prefix/"lib/thumb/#{v}/nofp").mkpath
+        (arm_prefix / "lib/thumb/#{v}/nofp").mkpath
       end
       ["v7+fp", "v7e-m+fp", "v7e-m+dp", "v7-r+fp.sp", "v8-m.main+fp", "v8-m.main+dp"].each do |v|
-        (arm_prefix/"lib/thumb/#{v}/hard").mkpath
-        (arm_prefix/"lib/thumb/#{v}/softfp").mkpath
+        (arm_prefix / "lib/thumb/#{v}/hard").mkpath
+        (arm_prefix / "lib/thumb/#{v}/softfp").mkpath
       end
 
       mkdir "build-nano" do
@@ -138,11 +140,11 @@ class ArmNoneEabiGccAT9 < Formula
         system "make"
         system "make", "install"
 
-        (arm_prefix/"lib").glob("**/lib{c,g,rdimon}.a").each do |f|
+        (arm_prefix / "lib").glob("**/lib{c,g,rdimon}.a").each do |f|
           mv f, f.sub(".a", "_nano.a")
         end
-        (arm_prefix/"include/newlib-nano").mkpath
-        mv arm_prefix/"include/newlib.h", arm_prefix/"include/newlib-nano/newlib.h"
+        (arm_prefix / "include/newlib-nano").mkpath
+        mv arm_prefix / "include/newlib.h", arm_prefix / "include/newlib-nano/newlib.h"
       end
 
       mkdir "build" do
@@ -175,8 +177,8 @@ class ArmNoneEabiGccAT9 < Formula
 
       --enable-languages=#{languages.join(",")}
 
-      --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin/"arm-none-eabi-ld"}
-      --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin/"arm-none-eabi-as"}
+      --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-ld"}
+      --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-as"}
 
       --enable-plugins
       --disable-decimal-float
@@ -219,7 +221,7 @@ class ArmNoneEabiGccAT9 < Formula
       # otherwise updated load commands won't fit in the Mach-O header.
       # This is needed because `gcc` avoids the superenv shim.
       system "make", "INHIBIT_LIBC_CFLAGS='-DUSE_TM_CLONE_REGISTRY=0'",
-                     "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
+             "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
       system "make", "install"
     end
 
@@ -230,7 +232,7 @@ class ArmNoneEabiGccAT9 < Formula
       ENV["CXXFLAGS_FOR_TARGET"] = "-g -Os -ffunction-sections -fdata-sections -fno-exceptions"
 
       system "make", "INHIBIT_LIBC_CFLAGS='-DUSE_TM_CLONE_REGISTRY=0'",
-                     "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
+             "BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"
       system "make", "DESTDIR=#{buildpath.parent}/nano-install", "install"
     end
 
@@ -238,19 +240,19 @@ class ArmNoneEabiGccAT9 < Formula
     multilibs = `#{bin}/arm-none-eabi-gcc -print-multi-lib`.split("\n")
     multilibs.each do |multilib|
       m_dir = multilib.split(";").first.chomp
-      from_dir = buildpath.parent/"nano-install"/arm_prefix/"lib"/m_dir
-      to_dir = arm_prefix/"lib"/m_dir
-      cp from_dir/"libstdc++.a", to_dir/"libstdc++_nano.a"
-      cp from_dir/"libsupc++.a", to_dir/"libsupc++_nano.a"
+      from_dir = buildpath.parent / "nano-install" / arm_prefix / "lib" / m_dir
+      to_dir = arm_prefix / "lib" / m_dir
+      cp from_dir / "libstdc++.a", to_dir / "libstdc++_nano.a"
+      cp from_dir / "libsupc++.a", to_dir / "libsupc++_nano.a"
     end
 
     # strip target binaries
-    (arm_prefix/"lib").glob("**/*.{a,o}").each do |f|
+    (arm_prefix / "lib").glob("**/*.{a,o}").each do |f|
       system "arm-none-eabi-objcopy", "-R", ".comment", "-R", ".note", "-R", ".debug_info", "-R", ".debug_aranges",
              "-R", ".debug_pubnames", "-R", ".debug_pubtypes", "-R", ".debug_abbrev", "-R", ".debug_line",
              "-R", ".debug_str", "-R", ".debug_ranges", "-R", ".debug_loc", f.to_s
     end
-    (prefix/"lib").glob("**/*.{a,o}").each do |f|
+    (prefix / "lib").glob("**/*.{a,o}").each do |f|
       system "arm-none-eabi-objcopy", "-R", ".comment", "-R", ".note", "-R", ".debug_info", "-R", ".debug_aranges",
              "-R", ".debug_pubnames", "-R", ".debug_pubtypes", "-R", ".debug_abbrev", "-R", ".debug_line",
              "-R", ".debug_str", "-R", ".debug_ranges", "-R", ".debug_loc", f.to_s
