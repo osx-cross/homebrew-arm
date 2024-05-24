@@ -7,6 +7,12 @@ class ArmGccBinAT13 < Formula
     "arm-gnu-toolchain-13.2.rel1-darwin-x86_64-arm-none-eabi.tar.xz"
   end
 
+  @tar_file_sha = if Hardware::CPU.arm?
+    "39c44f8af42695b7b871df42e346c09fee670ea8dfc11f17083e296ea2b0d279"
+  else
+    "075faa4f3e8eb45e59144858202351a28706f54a6ec17eedd88c9fb9412372cc"
+  end
+
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads"
   url "https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/#{@tar_file}"
@@ -17,12 +23,6 @@ class ArmGccBinAT13 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "91ec58e4f00cf911ed4d12534591b776e9b1217ceb3b5b5f582da76646f70de7"
     sha256 cellar: :any_skip_relocation, ventura:      "6e8834c9c8bd67023b438451588ac679b2c520139ff9daec0692f184923078ec"
     sha256 cellar: :any_skip_relocation, monterey:     "b2ea7549fb70b7a69438a814c84bd9ef637b33ee93ec135842e82b787aa1db34"
-  end
-
-  @tar_file_sha = if Hardware::CPU.arm?
-    "39c44f8af42695b7b871df42e346c09fee670ea8dfc11f17083e296ea2b0d279"
-  else
-    "075faa4f3e8eb45e59144858202351a28706f54a6ec17eedd88c9fb9412372cc"
   end
 
   depends_on "xz" unless Hardware::CPU.arm?
