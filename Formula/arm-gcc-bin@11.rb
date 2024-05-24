@@ -7,6 +7,8 @@ class ArmGccBinAT11 < Formula
   version "11.3.Rel1"
   sha256 "826353d45e7fbaa9b87c514e7c758a82f349cb7fc3fd949423687671539b29cf"
 
+  revision 1
+
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@11-11.3.Rel1"
     rebuild 1
