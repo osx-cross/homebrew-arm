@@ -9,50 +9,36 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.OSX_CROSS_ARM_HOMEBREW_GITHUB_API_TOKEN }}
-  PULL_REQUEST: ${{ github.event.pull_request.number }}
-  BRANCH: ${{ github.event.pull_request.head.ref }}
-
 jobs:
   pr-pull:
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
-    runs-on: macos-latest
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: "${{ secrets.OSX_CROSS_ARM_HOMEBREW_GITHUB_API_TOKEN }}"
-
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Cache Homebrew Bundler RubyGems
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ runner.os }}-rubygems-
-
-      - name: Install Homebrew Bundler RubyGems
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: brew install-bundler-gems
-
       - name: Set up git
-        run: |
-          git config --global user.name "osxCrossTestBot"
-          git config --global user.email "osxCrossTestBot@leka.io"
+        uses: Homebrew/actions/git-user-config@master
+        with:
+            username: osxCrossTestBot
 
       - name: Pull bottles
-        run: brew pr-pull --debug --tap=$GITHUB_REPOSITORY $PULL_REQUEST
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: brew pr-pull --debug --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          token: ${{ secrets.OSX_CROSS_ARM_HOMEBREW_GITHUB_API_TOKEN }}
+          token: ${{ github.token }}
           branch: master
 
       - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false
-        run: git push --delete origin $BRANCH
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: git push --delete origin "$BRANCH"
