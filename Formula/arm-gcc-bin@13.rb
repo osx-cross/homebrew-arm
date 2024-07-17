@@ -38,6 +38,6 @@ class ArmGccBinAT13 < Formula
   end
 
   test do
-    assert_match "Arm GNU Toolchain #{version}", `#{opt_prefix}/bin/arm-none-eabi-gcc --version`
+    assert_match "Arm GNU Toolchain #{version}".strip.downcase, `#{opt_prefix}/bin/arm-none-eabi-gcc --version`.strip.downcase
   end
 end
