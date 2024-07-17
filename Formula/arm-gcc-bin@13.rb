@@ -26,6 +26,7 @@ class ArmGccBinAT13 < Formula
   end
 
   depends_on "xz" unless Hardware::CPU.arm?
+  depends_on "zstd" unless Hardware::CPU.arm?
 
   keg_only <<~KEG_ONLY_EOS
     it may interfere with another version of arm-gcc-bin.
