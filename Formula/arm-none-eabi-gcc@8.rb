@@ -260,7 +260,7 @@ class ArmNoneEabiGccAT8 < Formula
 
     # info and man7 files conflict with native gcc
     rm_r(info)
-    rm_r(rmtree)
+    rm_r(man7)
   end
 
   test do
