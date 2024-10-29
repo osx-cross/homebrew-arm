@@ -47,7 +47,7 @@ class ArmNoneEabiBinutils < Formula
       system "make", "install"
     end
 
-    info.rmtree # info files conflict with native binutils
+    rm_r(info) # info files conflict with native binutils
   end
 
   test do

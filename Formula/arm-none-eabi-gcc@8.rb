@@ -259,8 +259,8 @@ class ArmNoneEabiGccAT8 < Formula
     end
 
     # info and man7 files conflict with native gcc
-    info.rmtree
-    man7.rmtree
+    rm_r(info)
+    rm_r(rmtree)
   end
 
   test do
