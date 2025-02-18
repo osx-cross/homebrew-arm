@@ -19,6 +19,7 @@ class ArmGccBinAT14 < Formula
   sha256 @tar_file_sha
 
   depends_on "xz" unless Hardware::CPU.arm?
+  depends_on "zstd" unless Hardware::CPU.arm?
 
   keg_only <<~KEG_ONLY_EOS
     it may interfere with another version of arm-gcc-bin.
