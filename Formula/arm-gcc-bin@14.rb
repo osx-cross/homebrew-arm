@@ -7,6 +7,13 @@ class ArmGccBinAT14 < Formula
     "arm-gnu-toolchain-14.2.rel1-darwin-x86_64-arm-none-eabi.tar.xz"
   end
 
+  bottle do
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@14-14.2.rel1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b46c5d8026c8b1d1c410721da8259a4e1fca09aba222f644bec9eee8a5c7a850"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "908b92f97471ead3ac65f8997df61ccd22c7cf298d283e9d56e0dc10207851e0"
+    sha256 cellar: :any,                 ventura:       "5d1aa55a69ab3e028ea4d29372190365f946f176c1efdf5da1ec8034694a6f3c"
+  end
+
   @tar_file_sha = if Hardware::CPU.arm?
     "c7c78ffab9bebfce91d99d3c24da6bf4b81c01e16cf551eb2ff9f25b9e0a3818"
   else
