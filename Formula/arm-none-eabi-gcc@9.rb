@@ -32,9 +32,6 @@ class ArmNoneEabiGccAT9 < Formula
 
   uses_from_macos "zlib"
 
-  # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
-  cxxstdlib_check :skip
-
   resource "newlib" do
     url "https://sourceware.org/pub/newlib/newlib-3.3.0.tar.gz"
     sha256 "58dd9e3eaedf519360d92d84205c3deef0b3fc286685d1c562e245914ef72c66"
