@@ -4,8 +4,8 @@ class ArmNoneEabiGccAT9 < Formula
   desc "GNU Tools for ARM Embedded Processors - GCC"
   homepage "https://www.gnu.org/software/gcc/gcc.html"
 
-  url "https://ftp.gnu.org/gnu/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
+  url "https://ftpmirror.gnu.org/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-9.5.0/gcc-9.5.0.tar.xz"
   sha256 "27769f64ef1d4cd5e2be8682c0c93f9887983e6cfd1a927ce5a0a2915a95cf8f"
   revision 2
 
