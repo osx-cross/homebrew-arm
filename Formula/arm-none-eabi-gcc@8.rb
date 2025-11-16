@@ -4,8 +4,8 @@ class ArmNoneEabiGccAT8 < Formula
   desc "GNU Tools for ARM Embedded Processors - GCC"
   homepage "https://www.gnu.org/software/gcc/gcc.html"
 
-  url "https://ftp.gnu.org/gnu/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
+  url "https://ftpmirror.gnu.org/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-8.5.0/gcc-8.5.0.tar.xz"
   sha256 "d308841a511bb830a6100397b0042db24ce11f642dab6ea6ee44842e5325ed50"
   revision 2
 
@@ -31,9 +31,6 @@ class ArmNoneEabiGccAT8 < Formula
   depends_on "osx-cross/arm/arm-none-eabi-binutils"
 
   uses_from_macos "zlib"
-
-  # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
-  cxxstdlib_check :skip
 
   resource "newlib" do
     url "https://sourceware.org/pub/newlib/newlib-3.3.0.tar.gz"

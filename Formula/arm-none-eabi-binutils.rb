@@ -4,8 +4,8 @@ class ArmNoneEabiBinutils < Formula
   desc "GNU Tools for ARM Embedded Processors - Binutils"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
 
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
+  url "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
   sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
 
   bottle do
@@ -20,7 +20,6 @@ class ArmNoneEabiBinutils < Formula
            "installed on the same machine"
 
   depends_on "pkg-config" => :build
-  depends_on "texinfo" => :build
 
   uses_from_macos "zlib"
 
