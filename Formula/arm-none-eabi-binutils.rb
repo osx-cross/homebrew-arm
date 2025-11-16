@@ -20,7 +20,6 @@ class ArmNoneEabiBinutils < Formula
            "installed on the same machine"
 
   depends_on "pkg-config" => :build
-  depends_on "texinfo" => :build
 
   uses_from_macos "zlib"
 
