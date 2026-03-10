@@ -17,6 +17,8 @@ class ArmGccBinAT14 < Formula
   homepage "https://github.com/osx-cross/homebrew-arm"
   url "https://developer.arm.com/-/media/Files/downloads/gnu/#{@tar_file}"
   sha256 @tar_file_sha
+  revision 1
+
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@14-14.3.rel1"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "302083710aa69ac68c9100d44d08b511b0d35f4262bef843f549ddf7697ade52"
