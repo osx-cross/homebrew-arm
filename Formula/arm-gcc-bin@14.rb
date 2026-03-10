@@ -7,6 +7,12 @@ class ArmGccBinAT14 < Formula
     "14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-darwin-x86_64-arm-none-eabi.tar.xz"
   end
 
+  @tar_file_sha = if Hardware::CPU.arm?
+    "30f4d08b219190a37cded6aa796f4549504902c53cfc3c7e044a8490b6eba1f7"
+  else
+    "2d9e717dd4f7751d18936ae1365d25916534105ebcb7583039eff1092b824505"
+  end
+
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://github.com/osx-cross/homebrew-arm"
   url "https://developer.arm.com/-/media/Files/downloads/gnu/#{@tar_file}"
@@ -18,11 +24,6 @@ class ArmGccBinAT14 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99e037d7b224c32bf27653c616e23b28adf2c974b08484dc2cb45d599893540a"
   end
 
-  @tar_file_sha = if Hardware::CPU.arm?
-    "30f4d08b219190a37cded6aa796f4549504902c53cfc3c7e044a8490b6eba1f7"
-  else
-    "2d9e717dd4f7751d18936ae1365d25916534105ebcb7583039eff1092b824505"
-  end
   # x86_64: 14.3 is not available upstream; override the version scanned from the
   # URL so the bottle system sees a single consistent version across architectures.
   version "14.3.rel1" unless Hardware::CPU.arm?
