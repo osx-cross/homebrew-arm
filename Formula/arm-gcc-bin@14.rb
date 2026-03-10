@@ -20,10 +20,10 @@ class ArmGccBinAT14 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@14-14.3.rel1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "302083710aa69ac68c9100d44d08b511b0d35f4262bef843f549ddf7697ade52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d57c17e36fbb486b64fdc626173009935c23bb92710a8aa5b8854892e5332158"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99e037d7b224c32bf27653c616e23b28adf2c974b08484dc2cb45d599893540a"
+    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@14-14.3.rel1_1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fbd7f594b1e44407b14186342d1dd2f4b78660718ac1f7e5f6c522a0fbbf611"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c2d62b4390908e71b5bc4d6487db06e8772cafbd1d36b4b0268f44b7001be33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "303602a3b3f365ebbe0f975db520393aa20b664b9a0d97d04392136744ed59b7"
   end
 
   # x86_64: 14.3 is not available upstream; override the version scanned from the
