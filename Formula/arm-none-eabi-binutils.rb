@@ -4,9 +4,9 @@ class ArmNoneEabiBinutils < Formula
   desc "GNU Tools for ARM Embedded Processors - Binutils"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
 
-  url "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
-  sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
+  url "https://ftpmirror.gnu.org/binutils/binutils-2.45.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.xz"
+  sha256 "5fe101e6fe9d18fdec95962d81ed670fdee5f37e3f48f0bef87bddf862513aa5"
 
   bottle do
     root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-none-eabi-binutils-2.41"
@@ -50,6 +50,6 @@ class ArmNoneEabiBinutils < Formula
   end
 
   test do
-    assert_match "GNU ld (GNU Binutils) 2.41\n", `#{opt_prefix}/bin/arm-none-eabi-ld -v`
+    assert_match "GNU ld (GNU Binutils) 2.45.1\n", `#{opt_prefix}/bin/arm-none-eabi-ld -v`
   end
 end
