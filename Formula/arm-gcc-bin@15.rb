@@ -3,15 +3,8 @@
 class ArmGccBinAT15 < Formula
   desc "Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors"
   homepage "https://github.com/osx-cross/homebrew-arm"
-  url "https://developer.arm.com/-/media/Files/downloads/gnu/15.2.rel1/binrel/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi.tar.xz"
-  sha256 "1938a84b7105c192e3fb4fa5e893ba25f425f7ddab40515ae608cd40f68669a8"
-
-  bottle do
-    root_url "https://github.com/osx-cross/homebrew-arm/releases/download/arm-gcc-bin@15-15.2.rel1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ad29ace172c668a25900cec50e0e1f762fecfdbea9dd394c9f1de41f57cccac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "879cd211418a95969420c6a1800c23830c3e57e99cde1663e480f5ab46310310"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9473b45b70109b12c0976b5248d69c60365816c2813fd73006308a4f63e18fb"
-  end
+  url "https://gitlab.arm.com/api/v4/projects/tooling%2Fgnu-toolchains-for-arm/packages/generic/gnu-toolchain/15.3.rel1/arm-gnu-toolchain-15.3.rel1-darwin-arm64-arm-none-eabi.tar.xz"
+  sha256 "376808a59ca209c1413236f1c6a509e33da4b29857ab28642b9927cf3048af55"
 
   keg_only <<~KEG_ONLY_EOS
     it may interfere with another version of arm-gcc-bin.

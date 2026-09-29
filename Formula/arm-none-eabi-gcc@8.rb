@@ -24,6 +24,8 @@ class ArmNoneEabiGccAT8 < Formula
            "This is useful if you want to have multiple version of arm-none-eabi-gcc\n" \
            "installed on the same machine"
 
+  deprecate! date: "2026-09-29", because: "is superseded by the prebuilt arm-gcc-bin formulae"
+
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
@@ -62,8 +64,8 @@ class ArmNoneEabiGccAT8 < Formula
           --prefix=/
           --target=arm-none-eabi
           --enable-languages=c
-          --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-ld"}
-          --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-as"}
+          --with-ld=#{formula_opt_bin("arm-none-eabi-binutils") / "arm-none-eabi-ld"}
+          --with-as=#{formula_opt_bin("arm-none-eabi-binutils") / "arm-none-eabi-as"}
           --disable-nls
           --disable-libssp
           --disable-shared
@@ -174,8 +176,8 @@ class ArmNoneEabiGccAT8 < Formula
 
       --enable-languages=#{languages.join(",")}
 
-      --with-ld=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-ld"}
-      --with-as=#{Formula["arm-none-eabi-binutils"].opt_bin / "arm-none-eabi-as"}
+      --with-ld=#{formula_opt_bin("arm-none-eabi-binutils") / "arm-none-eabi-ld"}
+      --with-as=#{formula_opt_bin("arm-none-eabi-binutils") / "arm-none-eabi-as"}
 
       --enable-plugins
       --disable-decimal-float
